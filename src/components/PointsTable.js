@@ -178,7 +178,7 @@ function PointsTable() {
                         onChange={(e) =>
                           handleResultChange(e, match, group.group)
                         }
-                        disabled={submittedResults[`${group.group}-${match}`]}
+                        // disabled={submittedResults[`${group.group}-${match}`]}
                       />
                       <p>{match}</p>
                       <input
@@ -190,7 +190,7 @@ function PointsTable() {
                         onChange={(e) =>
                           handleResultChange(e, match, group.group)
                         }
-                        disabled={submittedResults[`${group.group}-${match}`]}
+                        // disabled={submittedResults[`${group.group}-${match}`]}
                       />
                     </div>
                     {/* <button
