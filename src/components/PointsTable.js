@@ -145,6 +145,11 @@ function PointsTable() {
     );
   };
 
+  // Disable submit button if either home or away goals are empty
+  const isSubmitDisabled = (homeGoals, awayGoals) => {
+    return homeGoals === "" || awayGoals === "";
+  };
+
   return (
     <div className="points-table">
       <h2>Enter Match Results</h2>
@@ -195,7 +200,10 @@ function PointsTable() {
                     <button
                       className="goal-submit-btn"
                       onClick={() => handleSubmitResult(match, group.group)}
-                      disabled={submittedResults[`${group.group}-${match}`]}
+                      disabled={
+                        submittedResults[`${group.group}-${match}`] ||
+                        isSubmitDisabled(homeGoals, awayGoals)
+                      }
                     >
                       Submit
                     </button>
