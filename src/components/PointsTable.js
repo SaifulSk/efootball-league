@@ -105,10 +105,11 @@ function PointsTable() {
 
   // Recalculate and save updated points table
   useEffect(() => {
+    localStorage.removeItem("submittedResults");
+    localStorage.removeItem("matchResults");
     const table = calculateGroupPointsTable(fixtures, results);
     setGroupPoints(table);
     localStorage.setItem("matchResults", JSON.stringify(results));
-    localStorage.removeItem("submittedResults");
   }, [fixtures, results]);
 
   // Handle input changes for match results
