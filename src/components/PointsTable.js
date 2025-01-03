@@ -192,13 +192,13 @@ function PointsTable() {
                         disabled={submittedResults[`${group.group}-${match}`]}
                       />
                     </div>
-                    <button
+                    {/* <button
                       className="goal-submit-btn"
                       onClick={() => handleSubmitResult(match, group.group)}
                       disabled={submittedResults[`${group.group}-${match}`]}
                     >
                       Submit
-                    </button>
+                    </button> */}
                   </div>
                 );
               })}
