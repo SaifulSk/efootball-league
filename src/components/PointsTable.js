@@ -44,16 +44,6 @@ function calculateGroupPointsTable(fixtures, results) {
     const { match, homeGoals, awayGoals, group } = result;
     const [homeTeam, awayTeam] = match.split(" vs ");
 
-    // Skip matches with undefined or empty scores
-    if (
-      homeGoals === undefined ||
-      awayGoals === undefined ||
-      homeGoals === "" ||
-      awayGoals === ""
-    ) {
-      return;
-    }
-
     if (groupPoints[group][homeTeam] && groupPoints[group][awayTeam]) {
       groupPoints[group][homeTeam].played += 1;
       groupPoints[group][awayTeam].played += 1;
@@ -115,8 +105,6 @@ function PointsTable() {
 
   // Recalculate and save updated points table
   useEffect(() => {
-    localStorage.removeItem("matchResults");
-    localStorage.removeItem("submittedResults");
     const table = calculateGroupPointsTable(fixtures, results);
     setGroupPoints(table);
     localStorage.setItem("matchResults", JSON.stringify(results));
@@ -132,14 +120,14 @@ function PointsTable() {
       setResults((prev) =>
         prev.map((result) =>
           result.match === match && result.group === group
-            ? { ...result, [name]: parseInt(value, 10) || "" }
+            ? { ...result, [name]: parseInt(value, 10) || 0 }
             : result
         )
       );
     } else {
       setResults((prev) => [
         ...prev,
-        { match, group, [name]: parseInt(value, 10) || "" },
+        { match, group, [name]: parseInt(value, 10) || 0 },
       ]);
     }
   };
@@ -171,8 +159,12 @@ function PointsTable() {
                   (result) =>
                     result.match === match && result.group === group.group
                 );
-                const homeGoals = existingResult?.homeGoals ?? ""; // Use empty string if undefined
-                const awayGoals = existingResult?.awayGoals ?? ""; // Use empty string if undefined
+                const homeGoals = existingResult
+                  ? existingResult.homeGoals
+                  : "";
+                const awayGoals = existingResult
+                  ? existingResult.awayGoals
+                  : "";
                 return (
                   <div key={matchIndex} className="match">
                     <div className="match-details">
@@ -200,6 +192,13 @@ function PointsTable() {
                         disabled={submittedResults[`${group.group}-${match}`]}
                       />
                     </div>
+                    <button
+                      className="goal-submit-btn"
+                      onClick={() => handleSubmitResult(match, group.group)}
+                      disabled={submittedResults[`${group.group}-${match}`]}
+                    >
+                      Submit
+                    </button>
                   </div>
                 );
               })}
