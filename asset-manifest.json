@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/efootball-league/static/css/main.796eb10c.css",
-    "main.js": "/efootball-league/static/js/main.f1f252e2.js",
-    "static/js/453.cca002aa.chunk.js": "/efootball-league/static/js/453.cca002aa.chunk.js",
-    "static/media/bg.jpg": "/efootball-league/static/media/bg.0830878c4c8f75a55a26.jpg",
-    "index.html": "/efootball-league/index.html",
-    "main.796eb10c.css.map": "/efootball-league/static/css/main.796eb10c.css.map",
-    "main.f1f252e2.js.map": "/efootball-league/static/js/main.f1f252e2.js.map",
-    "453.cca002aa.chunk.js.map": "/efootball-league/static/js/453.cca002aa.chunk.js.map"
+    "main.css": "/static/css/main.e4c32046.css",
+    "main.js": "/static/js/main.ed05ad19.js",
+    "static/js/453.cca002aa.chunk.js": "/static/js/453.cca002aa.chunk.js",
+    "static/media/bg.jpg": "/static/media/bg.0830878c4c8f75a55a26.jpg",
+    "index.html": "/index.html",
+    "main.e4c32046.css.map": "/static/css/main.e4c32046.css.map",
+    "main.ed05ad19.js.map": "/static/js/main.ed05ad19.js.map",
+    "453.cca002aa.chunk.js.map": "/static/js/453.cca002aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.796eb10c.css",
-    "static/js/main.f1f252e2.js"
+    "static/css/main.e4c32046.css",
+    "static/js/main.ed05ad19.js"
   ]
 }
