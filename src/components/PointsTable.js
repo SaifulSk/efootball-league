@@ -121,14 +121,14 @@ function PointsTable() {
       setResults((prev) =>
         prev.map((result) =>
           result.match === match && result.group === group
-            ? { ...result, [name]: parseInt(value, 10) || 0 }
+            ? { ...result, [name]: parseInt(value, 10) || null }
             : result
         )
       );
     } else {
       setResults((prev) => [
         ...prev,
-        { match, group, [name]: parseInt(value, 10) || 0 },
+        { match, group, [name]: parseInt(value, 10) || null },
       ]);
     }
   };
