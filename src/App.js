@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import SetupTournament from "./components/SetupTournament";
+import Fixtures from "./components/Fixtures";
+import "./styles.css";
+import PointsTable from "./components/PointsTable";
+import MatchResults from "./components/MatchResults";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            {/* <li>
+              <Link to="/setup">Setup Tournament</Link>
+            </li> */}
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/setup" element={<SetupTournament />} />
+          <Route path="/fixtures" element={<Fixtures />} />
+          <Route path="/points-table" element={<PointsTable />} />
+          <Route path="/match-results" element={<MatchResults />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
