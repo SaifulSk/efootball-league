@@ -145,6 +145,11 @@ function PointsTable() {
     );
   };
 
+  useEffect(() => {
+    localStorage.removeItem("submittedResults");
+    // localStorage.removeItem("Results")
+  }, []);
+
   return (
     <div className="points-table">
       <h2>Enter Match Results</h2>
