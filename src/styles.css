@@ -110,6 +110,8 @@ button:hover {
   margin: 5px 0;
   font-weight: 600;
   color: #fff;
+  width: 43%;
+  text-align: center;
 }
 
 .result-card div {
