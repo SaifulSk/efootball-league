@@ -177,7 +177,7 @@ function PointsTable() {
                       <input
                         type="number"
                         name="homeGoals"
-                        placeholder="Home Goals"
+                        // placeholder="Home Goals"
                         className="score-input"
                         value={homeGoals}
                         onChange={(e) =>
@@ -189,7 +189,7 @@ function PointsTable() {
                       <input
                         type="number"
                         name="awayGoals"
-                        placeholder="Away Goals"
+                        // placeholder="Away Goals"
                         className="score-input"
                         value={awayGoals}
                         onChange={(e) =>
@@ -221,14 +221,14 @@ function PointsTable() {
             <thead>
               <tr>
                 <th>Team</th>
-                <th>P</th>
+                <th>Pl</th>
                 <th>W</th>
                 <th>D</th>
                 <th>L</th>
-                <th>Pts</th>
                 <th>GF</th>
                 <th>GA</th>
                 <th>GD</th>
+                <th>Pts</th>
               </tr>
             </thead>
             <tbody>
@@ -239,10 +239,10 @@ function PointsTable() {
                   <td>{team.won}</td>
                   <td>{team.drawn}</td>
                   <td>{team.lost}</td>
-                  <td>{team.points}</td>
                   <td>{team.goalsFor}</td>
                   <td>{team.goalsAgainst}</td>
                   <td>{team.goalsFor - team.goalsAgainst}</td>
+                  <td>{team.points}</td>
                 </tr>
               ))}
             </tbody>
