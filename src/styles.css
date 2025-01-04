@@ -193,6 +193,10 @@ tbody tr:hover {
   gap: 10px;
 }
 
+.match-details p {
+  text-align: center;
+}
+
 .score-input {
   width: 25px;
   padding: 5px;
