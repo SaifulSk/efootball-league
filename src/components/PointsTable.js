@@ -95,6 +95,7 @@ function PointsTable() {
       setFixtures(generatedFixtures);
     }
     localStorage.removeItem("matchResults");
+    localStorage.removeItem("submittedResults");
     const savedResults = JSON.parse(localStorage.getItem("matchResults")) || [];
     const savedSubmittedResults =
       JSON.parse(localStorage.getItem("submittedResults")) || {};
