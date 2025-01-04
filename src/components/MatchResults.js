@@ -17,7 +17,7 @@ function MatchResults() {
         <div>
           {results.map((result, index) => (
             <div key={index} className="result-card">
-              <h3>Group: {result.group}</h3>
+              <h3>{result.group}</h3>
               <p>
                 <strong>Match:</strong> {result.match}
               </p>
