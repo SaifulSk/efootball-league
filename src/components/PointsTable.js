@@ -94,7 +94,7 @@ function PointsTable() {
       const generatedFixtures = JSON.parse(localStorage.getItem("fixtures"));
       setFixtures(generatedFixtures);
     }
-
+    localStorage.removeItem("matchResults");
     const savedResults = JSON.parse(localStorage.getItem("matchResults")) || [];
     const savedSubmittedResults =
       JSON.parse(localStorage.getItem("submittedResults")) || {};
@@ -182,7 +182,7 @@ function PointsTable() {
                         onChange={(e) =>
                           handleResultChange(e, match, group.group)
                         }
-                        disabled={submittedResults[`${group.group}-${match}`]}
+                        // disabled={submittedResults[`${group.group}-${match}`]}
                       />
                       <p>{match}</p>
                       <input
@@ -194,13 +194,13 @@ function PointsTable() {
                         onChange={(e) =>
                           handleResultChange(e, match, group.group)
                         }
-                        disabled={submittedResults[`${group.group}-${match}`]}
+                        // disabled={submittedResults[`${group.group}-${match}`]}
                       />
                     </div>
                     <button
                       className="goal-submit-btn"
                       onClick={() => handleSubmitResult(match, group.group)}
-                      disabled={submittedResults[`${group.group}-${match}`]}
+                      // disabled={submittedResults[`${group.group}-${match}`]}
                     >
                       Submit
                     </button>
