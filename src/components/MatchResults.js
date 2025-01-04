@@ -18,12 +18,11 @@ function MatchResults() {
           {results.map((result, index) => (
             <div key={index} className="result-card">
               <h3>{result.group}</h3>
-              <p>
-                <strong>Match:</strong> {result.match}
-              </p>
-              <p>
-                <strong>Score:</strong> {result.homeGoals} - {result.awayGoals}
-              </p>
+              <p>{result.match.split(" vs ")[0]}</p>
+              <div>
+                {result.homeGoals} - {result.awayGoals}
+              </div>
+              <p>{result.match.split(" vs ")[1]}</p>
             </div>
           ))}
         </div>
