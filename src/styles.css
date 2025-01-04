@@ -89,14 +89,16 @@ button:hover {
   background: #df0737;
   border-radius: 6px;
   color: #fff;
-  font-size: 13px;
+  font-size: 20px;
+  height: 102%;
   margin-bottom: 10px;
-  /* padding: 6px; */
   position: absolute;
   right: 0;
-  top: -14px;
-  height: 102%;
+  top: -21px;
   width: 45px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .result-card p {
