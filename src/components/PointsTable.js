@@ -175,7 +175,7 @@ function PointsTable() {
                   <div key={matchIndex} className="match">
                     <div className="match-details">
                       <input
-                        type="number"
+                        type="tel"
                         name="homeGoals"
                         // placeholder="Home Goals"
                         className="score-input"
@@ -187,7 +187,7 @@ function PointsTable() {
                       />
                       <p>{match}</p>
                       <input
-                        type="number"
+                        type="tel"
                         name="awayGoals"
                         // placeholder="Away Goals"
                         className="score-input"
