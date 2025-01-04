@@ -76,36 +76,48 @@ button:hover {
 }
 
 .result-card {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  background-image: linear-gradient(90deg, #03064b, #630657);
+  /* border: 1px solid #ddd; */
   border-radius: 6px;
   box-shadow: 0 1px 4px #0000001a;
   margin-bottom: 15px;
-  padding: 5px 15px;
+  padding: 0px 15px;
   position: relative;
-}
-
-.result-card h3 {
-  background: #df0737;
-  border-radius: 6px;
-  color: #fff;
-  font-size: 20px;
-  height: 102%;
-  margin-bottom: 10px;
-  position: absolute;
-  right: 0;
-  top: -21px;
-  width: 45px;
-  justify-content: center;
   display: flex;
+  justify-content: space-between;
+  max-width: 87%;
   align-items: center;
 }
 
-.result-card p {
-  margin: 5px 0;
-  font-size: 1em;
+.result-card h3 {
+  align-items: center;
+  background: #df0737;
+  border-radius: 6px;
+  color: #fff;
+  display: flex;
+  font-size: 20px;
+  height: 102%;
+  justify-content: center;
+  margin-bottom: 10px;
+  position: absolute;
+  right: -50px;
+  top: -21px;
+  width: 45px;
 }
 
+.result-card p {
+  font-size: 17px;
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+.result-card div {
+  background: #df0737;
+  padding: 5px 10px;
+  /* border-radius: 6px; */
+  color: #eded05;
+  font-weight: 800;
+}
 .points-table {
   padding: 20px;
   max-width: 900px;
