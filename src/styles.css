@@ -192,7 +192,7 @@ tbody tr:hover {
   align-items: center;
   gap: 10px;
   justify-content: space-between;
-  max-width: 95%;
+  width: 95%;
 }
 
 .match-details p {
