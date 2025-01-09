@@ -106,9 +106,11 @@ function PointsTable() {
 
   // Recalculate and save updated points table
   useEffect(() => {
-    const table = calculateGroupPointsTable(fixtures, results);
-    setGroupPoints(table);
-    localStorage.setItem("matchResults", JSON.stringify(results));
+    if (fixtures?.length > 0 && results?.length > 0) {
+      const table = calculateGroupPointsTable(fixtures, results);
+      setGroupPoints(table);
+      localStorage.setItem("matchResults", JSON.stringify(results));
+    }
   }, [fixtures, results]);
 
   // Handle input changes for match results
@@ -172,7 +174,7 @@ function PointsTable() {
   };
 
   useEffect(() => {
-    localStorage.removeItem("submittedResults");
+    // localStorage.removeItem("submittedResults");
     // localStorage.removeItem("Results")
   }, []);
 

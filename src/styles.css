@@ -91,6 +91,15 @@ body {
   }
 }
 
+@media screen and (min-width: 865px) {
+  .result-card {
+    max-width: 550px !important;
+  }
+  .result-card div {
+    width: 80px !important;
+  }
+}
+
 .app {
   max-width: 650px;
   margin: auto;
@@ -167,12 +176,12 @@ button:hover {
   /* border: 1px solid #ddd; */
   border-radius: 6px;
   box-shadow: 0 1px 4px #0000001a;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding: 0px 15px;
   position: relative;
   display: flex;
   justify-content: space-between;
-  max-width: 87%;
+  max-width: 64vw;
   align-items: center;
 }
 
@@ -182,31 +191,34 @@ button:hover {
   border-radius: 6px;
   color: #fff;
   display: flex;
-  font-size: 20px;
+  font-size: 13px;
   height: 102%;
   justify-content: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   position: absolute;
-  right: -50px;
-  top: -21px;
-  width: 45px;
+  right: -35px;
+  /* top: -21px; */
+  width: 30px;
 }
 
 .result-card p {
-  font-size: 17px;
+  font-size: 13px;
   margin: 5px 0;
-  font-weight: 600;
+  font-weight: 500;
   color: #fff;
-  width: 43%;
+  width: 26vw;
   text-align: center;
 }
 
 .result-card div {
   background: #df0737;
-  padding: 5px 10px;
+  padding: 5px;
   /* border-radius: 6px; */
   color: #eded05;
-  font-weight: 800;
+  font-weight: 500;
+  width: 42px;
+  text-align: center;
+  font-size: 13px;
 }
 .points-table {
   padding: 20px;
