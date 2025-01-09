@@ -59,6 +59,13 @@ function SetupTournament() {
     navigate("/fixtures");
   };
 
+  const clearAllData = () => {
+    localStorage.clear();
+    setGroups(0);
+    setTeamsPerGroup(0);
+    setGroupTeams({});
+  };
+
   return (
     <div className="setup-container">
       <div className="setup-header">
@@ -67,7 +74,7 @@ function SetupTournament() {
           style={{
             height: "100%",
           }}
-          onClick={() => localStorage.clear()}
+          onClick={() => clearAllData()}
         >
           Reset Data
         </button>
