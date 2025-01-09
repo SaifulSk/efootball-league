@@ -63,6 +63,14 @@ function SetupTournament() {
     <div className="setup-container">
       <div className="setup-header">
         <h2>Setup Tournament</h2>
+        <button
+          style={{
+            height: "100%",
+          }}
+          onClick={() => localStorage.clear()}
+        >
+          Reset Data
+        </button>
       </div>
       <form onSubmit={handleSubmit} className="setup-form">
         <div className="form-group">
