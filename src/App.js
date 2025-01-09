@@ -8,28 +8,48 @@ import PointsTable from "./components/PointsTable";
 import MatchResults from "./components/MatchResults";
 
 function App() {
+  const [showMenu, setShowMenu] = React.useState(false);
   return (
     <Router>
       <div className="app">
-        <nav>
-          <ul>
+        <nav class="navbar">
+          <div class="navbar-header">
+            <button class="hamburger" onClick={() => setShowMenu(!showMenu)}>
+              &#9776;
+            </button>
+          </div>
+          <ul
+            class={"navbar-menu " + (showMenu ? "show" : "")}
+            id="navbar-menu"
+          >
             <li>
-              <Link to="/">Home</Link>
+              <a href="/" data-discover="true">
+                Home
+              </a>
             </li>
             <li>
-              <Link to="/setup">Setup Tournament</Link>
+              <a href="/setup" data-discover="true">
+                Setup Tournament
+              </a>
             </li>
             <li>
-              <Link to="/fixtures">Fixtures</Link>
+              <a href="/fixtures" data-discover="true">
+                Fixtures
+              </a>
             </li>
             <li>
-              <Link to="/points-table">Points Table</Link>
+              <a href="/points-table" data-discover="true">
+                Points Table
+              </a>
             </li>
             <li>
-              <Link to="/match-results">Match Results</Link>
+              <a href="/match-results" data-discover="true">
+                Match Results
+              </a>
             </li>
           </ul>
         </nav>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/setup" element={<SetupTournament />} />

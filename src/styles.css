@@ -5,6 +5,90 @@ body {
   background-color: #f4f4f9;
 }
 
+/* Base styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px 15px; /* Reduced padding to fit more items */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin: 0 8px; /* Reduced margin to save space */
+}
+
+.navbar-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 8px; /* Reduced padding to fit more items */
+  font-size: 14px; /* Reduced font size */
+  transition: background-color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  background-color: #575757;
+  border-radius: 3px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .navbar-menu.show {
+    display: flex;
+  }
+
+  .navbar-menu li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .navbar-menu a {
+    font-size: 16px; /* Slightly larger font for easier tapping */
+  }
+}
+
 .app {
   max-width: 650px;
   margin: auto;
@@ -44,7 +128,7 @@ h3 {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 button {
@@ -63,10 +147,11 @@ button:hover {
 .match-results {
   padding: 20px;
   max-width: 800px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
 }
 
 .match-results h2 {
@@ -124,7 +209,7 @@ button:hover {
 .points-table {
   padding: 20px;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 20px 0;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
