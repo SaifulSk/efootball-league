@@ -47,6 +47,7 @@ body {
 .navbar-menu a:hover {
   background-color: #575757;
   border-radius: 3px;
+  text-decoration: none;
 }
 
 .hamburger {
