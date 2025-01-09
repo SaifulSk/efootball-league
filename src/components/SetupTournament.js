@@ -61,6 +61,7 @@ function SetupTournament() {
 
   const clearAllData = () => {
     localStorage.clear();
+    setType("league");
     setGroups(0);
     setTeamsPerGroup(0);
     setGroupTeams({});
