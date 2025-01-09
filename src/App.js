@@ -32,25 +32,21 @@ function App() {
                 Setup Tournament
               </a>
             </li>
-            {localStorage.getItem("tournamentData") && (
-              <>
-                <li>
-                  <a href="/fixtures" data-discover="true">
-                    Fixtures
-                  </a>
-                </li>
-                <li>
-                  <a href="/points-table" data-discover="true">
-                    Points Table
-                  </a>
-                </li>
-                <li>
-                  <a href="/match-results" data-discover="true">
-                    Match Results
-                  </a>
-                </li>
-              </>
-            )}
+            <li>
+              <a href="/fixtures" data-discover="true">
+                Fixtures
+              </a>
+            </li>
+            <li>
+              <a href="/points-table" data-discover="true">
+                Points Table
+              </a>
+            </li>
+            <li>
+              <a href="/match-results" data-discover="true">
+                Match Results
+              </a>
+            </li>
           </ul>
         </nav>
 
