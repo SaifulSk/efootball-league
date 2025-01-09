@@ -79,8 +79,14 @@ function Fixtures() {
           <h3>{round.round}</h3> {/* Round name as the main heading */}
           {round.groups.map((group, groupIndex) => (
             <>
-              <div key={groupIndex} className="group">
-                <h4>{`Group ${group.group}`}</h4>{" "}
+              <div
+                key={groupIndex}
+                className="group"
+                style={{
+                  gridColumn: round.groups?.length == 1 ? "span 2" : "",
+                }}
+              >
+                {round.groups?.length > 1 && <h4>{`Group ${group.group}`}</h4>}
                 {/* Group name as subheading */}
                 <ul>
                   {group.matches.map((match, matchIndex) => (

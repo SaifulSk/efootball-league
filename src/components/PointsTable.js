@@ -106,9 +106,9 @@ function PointsTable() {
 
   // Recalculate and save updated points table
   useEffect(() => {
+    const table = calculateGroupPointsTable(fixtures, results);
+    setGroupPoints(table);
     if (fixtures?.length > 0 && results?.length > 0) {
-      const table = calculateGroupPointsTable(fixtures, results);
-      setGroupPoints(table);
       localStorage.setItem("matchResults", JSON.stringify(results));
     }
   }, [fixtures, results]);
@@ -171,6 +171,7 @@ function PointsTable() {
       "submittedResults",
       JSON.stringify(updatedSubmittedResults)
     );
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -195,8 +196,14 @@ function PointsTable() {
             </button>
           </h3>
           {round.groups.map((group, groupIndex) => (
-            <div key={groupIndex} className="group">
-              <h4>{`Group ${group.group}`}</h4>
+            <div
+              key={groupIndex}
+              className="group"
+              style={{
+                gridColumn: round.groups?.length == 1 ? "span 2" : "",
+              }}
+            >
+              {round.groups?.length > 1 && <h4>{`Group ${group.group}`}</h4>}
               {group.matches.map((match, matchIndex) => {
                 const existingResult = results.find(
                   (result) =>
@@ -250,10 +257,10 @@ function PointsTable() {
         </div>
       ))}
 
-      <h2>Group-wise Points Table</h2>
+      <h2>Points Table</h2>
       {Object.keys(groupPoints).map((groupName) => (
         <div key={groupName} className="group-points">
-          <h3>{`Group ${groupName}`}</h3>
+          {groupPoints?.length > 1 && <h3>{`Group ${groupName}`}</h3>}
           <table>
             <thead>
               <tr>
