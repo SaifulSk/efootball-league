@@ -260,7 +260,9 @@ function PointsTable() {
       <h2>Points Table</h2>
       {Object.keys(groupPoints).map((groupName) => (
         <div key={groupName} className="group-points">
-          {groupPoints?.length > 1 && <h3>{`Group ${groupName}`}</h3>}
+          {Object.keys(groupPoints)?.length > 1 && (
+            <h3>{`Group ${groupName}`}</h3>
+          )}
           <table>
             <thead>
               <tr>
