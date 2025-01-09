@@ -146,6 +146,31 @@ function PointsTable() {
     );
   };
 
+  const clearRoundData = (round) => {
+    const updatedResults = results.filter(
+      (result) =>
+        !round.groups.some((group) =>
+          group.matches.some((match) => match === result.match)
+        )
+    );
+    setResults(updatedResults);
+    localStorage.setItem("matchResults", JSON.stringify(updatedResults));
+    const updatedSubmittedResults = Object.keys(submittedResults).reduce(
+      (acc, key) =>
+        !round.groups.some((group) =>
+          group.matches.some((match) => `${group.group}-${match}` === key)
+        )
+          ? { ...acc, [key]: submittedResults[key] }
+          : acc,
+      {}
+    );
+    setSubmittedResults(updatedSubmittedResults);
+    localStorage.setItem(
+      "submittedResults",
+      JSON.stringify(updatedSubmittedResults)
+    );
+  };
+
   useEffect(() => {
     localStorage.removeItem("submittedResults");
     // localStorage.removeItem("Results")
@@ -156,7 +181,17 @@ function PointsTable() {
       <h2>Enter Match Results</h2>
       {fixtures.map((round, roundIndex) => (
         <div key={roundIndex} className="round">
-          <h3>{round.round}</h3>
+          <h3>
+            {round.round}
+            <button
+              style={{
+                height: "100%",
+              }}
+              onClick={() => clearRoundData(round)}
+            >
+              Reset Data
+            </button>
+          </h3>
           {round.groups.map((group, groupIndex) => (
             <div key={groupIndex} className="group">
               <h4>{`Group ${group.group}`}</h4>
