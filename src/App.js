@@ -16,9 +16,18 @@ function App() {
             <li>
               <Link to="/">Home</Link>
             </li>
-            {/* <li>
+            <li>
               <Link to="/setup">Setup Tournament</Link>
-            </li> */}
+            </li>
+            <li>
+              <Link to="/fixtures">Fixtures</Link>
+            </li>
+            <li>
+              <Link to="/points-table">Points Table</Link>
+            </li>
+            <li>
+              <Link to="/match-results">Match Results</Link>
+            </li>
           </ul>
         </nav>
         <Routes>
