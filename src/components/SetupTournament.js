@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SetupTournament.css";
 
@@ -8,6 +8,17 @@ function SetupTournament() {
   const [teamsPerGroup, setTeamsPerGroup] = useState(0);
   const [groupTeams, setGroupTeams] = useState({});
   const navigate = useNavigate();
+
+  // Load saved data from localStorage
+  useEffect(() => {
+    const savedData = JSON.parse(localStorage.getItem("tournamentData"));
+    if (savedData) {
+      setType(savedData.type);
+      setGroups(savedData.groups);
+      setTeamsPerGroup(savedData.teamsPerGroup);
+      setGroupTeams(savedData.groupTeams);
+    }
+  }, []);
 
   const handleGroupsChange = (e) => {
     const numGroups = parseInt(e.target.value, 10);
@@ -28,10 +39,6 @@ function SetupTournament() {
 
   const handleTeamsPerGroupChange = (e) => {
     const value = parseInt(e.target.value, 10);
-    // if (value % 2 !== 0) {
-    //   alert("Please enter an even number of teams.");
-    //   return;
-    // }
     setTeamsPerGroup(value);
     const updatedGroups = { ...groupTeams };
     for (let i = 1; i <= groups; i++) {
